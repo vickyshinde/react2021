@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import ACom from './ACom'
+import ACom from './ACom';
 
 // context
 
@@ -12,10 +12,8 @@ const ObjData = createContext();
 
 const HooksUseContext = () => {
   return (
-    <BioData.Provider value={"Vicky Shinde"}>
-      <ObjData.Provider
-        value={{ fname: "vicky", lname: "shinde", gender: "male" }}
-      >
+    <BioData.Provider value="Vicky Shinde">
+      <ObjData.Provider value={{ fname: 'vicky', lname: 'shinde', gender: 'male' }}>
         <div>
           <h1>Hooks useContext</h1>
           <ACom />
@@ -23,7 +21,7 @@ const HooksUseContext = () => {
       </ObjData.Provider>
     </BioData.Provider>
   );
-}
+};
 
 export default HooksUseContext;
 

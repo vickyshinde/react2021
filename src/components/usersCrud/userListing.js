@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
-import { useHistory } from "react-router";
-import Loading from "../shared/Loading";
-import { getUsers, deleteUser } from "../../config/api-endpoints";
-import SubmitButtonWrapped from "../shared/SubmitButton";
+import { useEffect, useState } from 'react';
+import { NavLink, useHistory } from 'react-router-dom';
+import Loading from '../shared/Loading';
+import { getUsers, deleteUser } from '../../config/api-endpoints';
+import SubmitButtonWrapped from '../shared/SubmitButton';
 
 const UserListing = () => {
-
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -18,18 +16,18 @@ const UserListing = () => {
     // debugger;
     setUsers(response.data);
     setLoading(false);
-  }
+  };
 
   useEffect(() => {
     getAllUsers();
   }, []);
 
-  const handleDelete =  async (id) => {
-    if (window.confirm("Are you wanted to delete the User")) {
+  const handleDelete = async (id) => {
+    if (window.confirm('Are you wanted to delete the User')) {
       await deleteUser(id);
       getAllUsers();
     }
-  }
+  };
 
   return (
     <>
@@ -86,6 +84,6 @@ const UserListing = () => {
       )}
     </>
   );
-}
+};
 
 export default UserListing;

@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 class UserInputErrorBoundary extends React.Component {
   constructor(props) {
@@ -38,18 +38,7 @@ const UserInputWrapped = (props) => {
   );
 };
 
-const UserInput = ({
-  label,
-  id,
-  name,
-  type,
-  clsName,
-  placeholder,
-  errorMsg,
-  isValid,
-  onChange,
-  val,
-}) => {
+const UserInput = ({ label, id, name, type, clsName, placeholder, errorMsg, isValid, onChange, val }) => {
   // useEffect(() => {
   //   throw new Error();
   // test
@@ -75,14 +64,14 @@ const UserInput = ({
 };
 
 UserInput.defaultProps = {
-  id: "",
-  name: "",
-  label: "Input",
-  type: "text",
-  clsName: "inputClass",
-  placeholder: "placeholder",
-  value: "",
-  onChange: () => {},
+  id: '',
+  name: '',
+  label: 'Input',
+  type: 'text',
+  clsName: 'inputClass',
+  placeholder: 'placeholder',
+  value: '',
+  onChange: () => {}
 };
 
 UserInput.propTypes = {
@@ -95,7 +84,7 @@ UserInput.propTypes = {
   errorMsg: PropTypes.string,
   isValid: PropTypes.bool,
   value: PropTypes.string,
-  onChange: PropTypes.func,
+  onChange: PropTypes.func
 };
 
 export default UserInputWrapped;

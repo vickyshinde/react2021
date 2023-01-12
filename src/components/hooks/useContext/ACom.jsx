@@ -1,4 +1,4 @@
-import BCom from "./BCom";
+import BCom from './BCom';
 
 const ACom = () => {
   return (

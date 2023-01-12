@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router";
-import { editUser, getUsers } from "../../config/api-endpoints";
-import SubmitButtonWrapped from "../shared/SubmitButton";
-import UserInputWrapped from "../shared/UserInput";
+import { useEffect, useState } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
+import { editUser, getUsers } from '../../config/api-endpoints';
+import SubmitButtonWrapped from '../shared/SubmitButton';
+import UserInputWrapped from '../shared/UserInput';
 
 const initialValues = {
-  name: "",
-  email: "",
-  contact: "",
-  password: "",
+  name: '',
+  email: '',
+  contact: '',
+  password: ''
 };
 
 const UserEdit = () => {
@@ -24,14 +24,12 @@ const UserEdit = () => {
     isNameValid: false,
     isEmailValid: false,
     isContactValid: false,
-    isPasswordValid: false,
+    isPasswordValid: false
   });
 
-  const { isNameValid, isEmailValid, isContactValid, isPasswordValid } =
-  isInputValid;
+  const { isNameValid, isEmailValid, isContactValid, isPasswordValid } = isInputValid;
 
   const [isDisabled, setIsDisabled] = useState(false);
-
 
   useEffect(() => {
     const loadUserData = async () => {
@@ -45,21 +43,19 @@ const UserEdit = () => {
     if (name.length < 4) {
       setIsInputValid({
         ...isInputValid,
-        isNameValid: true,
+        isNameValid: true
       });
       setIsDisabled(false);
     } else {
       setIsInputValid({
         ...isInputValid,
-        isNameValid: false,
+        isNameValid: false
       });
-      setIsDisabled(
-        isNameValid && isEmailValid && isContactValid && isPasswordValid
-      );
+      setIsDisabled(isNameValid && isEmailValid && isContactValid && isPasswordValid);
     }
     setUserObj({
       ...userObj,
-      name: name,
+      name
     });
   };
 
@@ -67,35 +63,31 @@ const UserEdit = () => {
     if (contact.length < 10) {
       setIsInputValid({
         ...isInputValid,
-        isContactValid: true,
+        isContactValid: true
       });
       setIsDisabled(false);
     } else {
       setIsInputValid({
         ...isInputValid,
-        isContactValid: false,
+        isContactValid: false
       });
-      setIsDisabled(
-        isNameValid && isEmailValid && isContactValid && isPasswordValid
-      );
+      setIsDisabled(isNameValid && isEmailValid && isContactValid && isPasswordValid);
     }
     setUserObj({
       ...userObj,
-      contact: contact,
+      contact
     });
   };
 
   const onEmailChange = (email) => {
     // console.log(email);
-    let validEmail = new RegExp(
-      /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g
-    ).test(email);
+    let validEmail = new RegExp(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g).test(email);
 
     // email is typing
     if (email) {
       setIsInputValid({
         ...isInputValid,
-        isEmailValid: true,
+        isEmailValid: true
       });
       setIsDisabled(false);
     }
@@ -104,15 +96,13 @@ const UserEdit = () => {
     if (validEmail) {
       setIsInputValid({
         ...isInputValid,
-        isEmailValid: false,
+        isEmailValid: false
       });
-      setIsDisabled(
-        isNameValid && isEmailValid && isContactValid && isPasswordValid
-      );
+      setIsDisabled(isNameValid && isEmailValid && isContactValid && isPasswordValid);
     }
     setUserObj({
       ...userObj,
-      email: email,
+      email
     });
   };
   const onPasswordChange = (password) => {
@@ -120,23 +110,19 @@ const UserEdit = () => {
     if (validPass) {
       setIsInputValid({
         ...isInputValid,
-        isPasswordValid: false,
+        isPasswordValid: false
       });
-      setIsDisabled(
-        !setIsDisabled(
-          isNameValid && isEmailValid && isContactValid && isPasswordValid
-        )
-      );
+      setIsDisabled(!setIsDisabled(isNameValid && isEmailValid && isContactValid && isPasswordValid));
     } else {
       setIsInputValid({
         ...isInputValid,
-        isPasswordValid: true,
+        isPasswordValid: true
       });
       setIsDisabled(false);
     }
     setUserObj({
       ...userObj,
-      password: password,
+      password
     });
   };
 
@@ -148,7 +134,7 @@ const UserEdit = () => {
     e.preventDefault();
     editUserDetails(userObj);
     console.log(userObj);
-    history.push("/user-listing");
+    history.push('/user-listing');
   };
   return (
     <>
@@ -163,7 +149,7 @@ const UserEdit = () => {
               type="text"
               clsName="form-control"
               placeholder="Enter name"
-              errorMsg={"Please enter name min 4 character"}
+              errorMsg="Please enter name min 4 character"
               isValid={isNameValid}
               onChange={onNameChange}
               val={name}
@@ -175,7 +161,7 @@ const UserEdit = () => {
               type="email"
               clsName="form-control"
               placeholder="Enter email"
-              errorMsg={"Please enter valid email id"}
+              errorMsg="Please enter valid email id"
               isValid={isEmailValid}
               onChange={onEmailChange}
               val={email}
@@ -187,7 +173,7 @@ const UserEdit = () => {
               type="number"
               clsName="form-control"
               placeholder="Enter contact no"
-              errorMsg={"Please enter valid contact no"}
+              errorMsg="Please enter valid contact no"
               isValid={isContactValid}
               onChange={onContactChange}
               val={contact}
@@ -199,23 +185,17 @@ const UserEdit = () => {
               type="password"
               clsName="form-control"
               placeholder="Enter password"
-              errorMsg={
-                "Please enter min 8 character, least one digit, one lowercase, one uppercase"
-              }
+              errorMsg="Please enter min 8 character, least one digit, one lowercase, one uppercase"
               isValid={isPasswordValid}
               onChange={onPasswordChange}
               val={password}
             />
-            <SubmitButtonWrapped
-              disabled={!isDisabled}
-              title="Submit"
-              clsName="btn btn-warning mb-4 mr-4"
-            />
+            <SubmitButtonWrapped disabled={!isDisabled} title="Submit" clsName="btn btn-warning mb-4 mr-4" />
             <SubmitButtonWrapped
               title="< Back"
               clsName="btn btn-secondary mb-4"
               onClick={() => {
-                history.push("/user-listing");
+                history.push('/user-listing');
               }}
             />
           </div>

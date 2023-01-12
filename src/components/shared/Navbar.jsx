@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   return (
@@ -10,213 +10,108 @@ const NavBar = () => {
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/user-listing"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/user-listing">
             User CRUD
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/appTourGuide"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/appTourGuide">
             App Tour Guide
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/slider"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/slider">
             Slider
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/customHooks"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/customHooks">
             customHooks
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/posts"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/posts">
             Posts Pagination
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/liveSearchFilter"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/liveSearchFilter">
             Live Search Filter
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/weatherApp"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/weatherApp">
             Weather App
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/todoapp"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/todoapp">
             To Do App
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/todoAppAdvance"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/todoAppAdvance">
             To Do App Advance - <br />
             Edit, Update, localStorage
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/filterGallery"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/filterGallery">
             Filter Gallery
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/testimonial"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/testimonial">
             Testimonial
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/googleKeepApp"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/googleKeepApp">
             Google Keep App
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/form"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/form">
             Form
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/componentExerciser"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/componentExerciser">
             Component Exerciser
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/covidUpdate"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/covidUpdate">
             Covid Update
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/netflix"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/netflix">
             Netflix
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/handlingEvents"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/handlingEvents">
             Handling Events
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/hooks"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/hooks">
             Hooks
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/hooksUseEffectApi"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/hooksUseEffectApi">
             Hooks UseEffect Api
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/hooksUseReducer"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/hooksUseReducer">
             Hooks UseReducer
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/hooksUseContext"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/hooksUseContext">
             Hooks UseContext
           </NavLink>
         </li>
@@ -231,132 +126,67 @@ const NavBar = () => {
           </NavLink>
         </li> */}
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/HooksComponent"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/HooksComponent">
             Hooks All Component
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/loginForm"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/loginForm">
             Login Form
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/hooksUseEffect"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/hooksUseEffect">
             Use Effect
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/slotMachineGame"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/slotMachineGame">
             SlotMachineGame
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/simpleCalc"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/simpleCalc">
             Simple Calc
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/greeting"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/greeting">
             Greeting
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/ifElseTernery"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/ifElseTernery">
             If Else Ternery
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/routeRenderMethod"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/routeRenderMethod">
             Route Render Method and Component Prop
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/useParamsHooks/vicky"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/useParamsHooks/vicky">
             useParams Hooks
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/useParamsHooks/Shinde"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/useParamsHooks/Shinde">
             useParams Hooks
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/useParamsHooksTwo/vicky/shinde"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/useParamsHooksTwo/vicky/shinde">
             Tow useParams Hooks
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/hooksuseLocation/vicky/shinde"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/hooksuseLocation/vicky/shinde">
             useLocation Hooks
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            exact
-            className="nav-link"
-            activeClassName="active"
-            to="/hooksuseHistory/vicky/shinde"
-          >
+          <NavLink exact className="nav-link" activeClassName="active" to="/hooksuseHistory/vicky/shinde">
             useHistory Hooks
           </NavLink>
         </li>

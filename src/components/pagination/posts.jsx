@@ -84,7 +84,7 @@ const Posts = () => {
         paginatePrev={paginatePrev}
         paginateNext={paginateNext}
       /> */}
-      <button onClick={handleLoadMore} className="btn btn-success">
+      <button type="button" onClick={handleLoadMore} className="btn btn-success">
         LOAD MORE
       </button>
     </>

@@ -1,6 +1,5 @@
-
 import { useContext } from 'react';
-import { BioData, ObjData } from "./HooksUseContext";
+import { BioData, ObjData } from './HooksUseContext';
 
 const CCom = () => {
   const name = useContext(BioData);

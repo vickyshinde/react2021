@@ -1,11 +1,10 @@
-import Card from "./card";
-import MockData from "../../mockData/netflixData";
-
+import Card from './card';
+import MockData from '../../mockData/netflixData';
 
 const Netflix = function () {
-  console.log("---" + MockData[0].imgsrc);
+  console.log('---' + MockData[0].imgsrc);
 
-/* function nCard(val, index) {
+  /* function nCard(val, index) {
     console.log("val" + val)
     return (
       <Card
@@ -20,21 +19,14 @@ const Netflix = function () {
   } */
 
   // FAT ARROW Function
-  const nCard =(val, index) => {
-    console.log("val" + val);
+  const nCard = (val, index) => {
+    console.log('val' + val);
     return (
       <div className="col-3">
-        <Card
-          key={index}
-          imgsrc={val.imgsrc}
-          title={val.title}
-          sname={val.sname}
-          link={val.link}
-          cName={val.cName}
-        />
+        <Card key={index} imgsrc={val.imgsrc} title={val.title} sname={val.sname} link={val.link} cName={val.cName} />
       </div>
     );
-  }
+  };
 
   return (
     <>
@@ -88,9 +80,9 @@ const Netflix = function () {
       <h3>FAT ARROW Function</h3>
       <div className="row">
         {MockData.map((val, index, arr) => {
-          console.log("arr " + arr);
-          console.log("index " + index);
-          console.log("val" + val);
+          console.log('arr ' + arr);
+          console.log('index ' + index);
+          console.log('val' + val);
           return (
             <div className="col-3">
               <Card
@@ -107,6 +99,6 @@ const Netflix = function () {
       </div>
     </>
   );
-}
+};
 
 export default Netflix;
