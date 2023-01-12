@@ -1,9 +1,10 @@
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation } from 'react-router-dom';
+
 const HooksuseLocation = () => {
-  const {fname, lname} = useParams();
+  const { fname, lname } = useParams();
   const location = useLocation();
 
-  console.log("location");
+  console.log('location');
   console.log(location);
 
   return (
@@ -17,13 +18,14 @@ const HooksuseLocation = () => {
       </p>
       <p>
         Current location is <br />
-        {location.pathname.replace("/", " ")}
+        {location.pathname.replace('/', ' ')}
       </p>
       {location.pathname === `/hooksuseLocation/vicky/shinde` ? (
         <button
+          type="button"
           className="btn btn-warning"
           onClick={() => {
-            alert("Hi");
+            alert('Hi');
           }}
         >
           Got It
@@ -33,6 +35,6 @@ const HooksuseLocation = () => {
       )}
     </div>
   );
-}
+};
 
 export default HooksuseLocation;

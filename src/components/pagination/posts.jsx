@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { getPost } from "../../config/api-endpoints";
-import Pagination from "./pagination";
-import Post from "./post";
+import { useEffect, useState } from 'react';
+import { getPost } from '../../config/api-endpoints';
+import Pagination from './pagination';
+import Post from './post';
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
@@ -19,7 +19,6 @@ const Posts = () => {
   const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(5);
   const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
 
-
   const getAllPost = async () => {
     setLoader(true);
     const response = await getPost();
@@ -36,7 +35,7 @@ const Posts = () => {
   const paginatePrev = (e, pageNumber) => {
     e.preventDefault();
     setCurrentPage(pageNumber - 1);
-    if ((currentPage -1) % pageNumberLimit === 0) {
+    if ((currentPage - 1) % pageNumberLimit === 0) {
       setMaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
       setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit);
     }
@@ -54,7 +53,7 @@ const Posts = () => {
   const handleLoadMore = () => {
     setPostsPerPage(postsPerPage + 5);
     setCurrentPage(1);
-  }
+  };
 
   useEffect(() => {
     getAllPost();

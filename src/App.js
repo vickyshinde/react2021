@@ -40,6 +40,7 @@ import UserEdit from "./components/usersCrud/userEdit";
 import Posts from "./components/pagination/posts";
 import Slider from "./components/Slider/Slider";
 import CustomHook from "./components/customHooks";
+import AppTourGuide from "./components/aapTourGuide/aapTourGuide";
 
 function App() {
   return (
@@ -78,6 +79,7 @@ function App() {
               <Route path="/googleKeepApp" component={GoogleKeepApp} />
 
               <Route path="/posts" component={Posts} />
+              <Route path="/appTourGuide" component={AppTourGuide} />
 
               <Route path="/user-listing" component={UserListing} />
               <Route path="/user-add" component={UserAdd} />

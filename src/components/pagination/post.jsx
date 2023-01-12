@@ -1,7 +1,6 @@
-const Post = ({posts, loader}) => {
-
-  if(loader) {
-    return <h2 className="mt-5">loading....</h2>
+const Post = ({ posts, loader }) => {
+  if (loader) {
+    return <h2 className="mt-5">loading....</h2>;
   }
 
   return (
@@ -15,7 +14,6 @@ const Post = ({posts, loader}) => {
       })}
     </>
   );
-
-}
+};
 
 export default Post;

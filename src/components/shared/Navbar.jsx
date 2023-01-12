@@ -24,6 +24,16 @@ const NavBar = () => {
             exact
             className="nav-link"
             activeClassName="active"
+            to="/appTourGuide"
+          >
+            App Tour Guide
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            exact
+            className="nav-link"
+            activeClassName="active"
             to="/slider"
           >
             Slider
@@ -210,7 +220,7 @@ const NavBar = () => {
             Hooks UseContext
           </NavLink>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <NavLink
             exact
             className="nav-link"
@@ -219,7 +229,7 @@ const NavBar = () => {
           >
             Custom Hooks
           </NavLink>
-        </li>
+        </li> */}
         <li className="nav-item">
           <NavLink
             exact

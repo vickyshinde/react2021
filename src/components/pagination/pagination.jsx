@@ -37,7 +37,7 @@ const Pagination = ({
 
   let pageDecrementBtn = null;
 
-  if(minPageNumberLimit >= 1 ) {
+  if (minPageNumberLimit >= 1) {
     pageDecrementBtn = (
       <li className="page-item">
         <a
@@ -56,7 +56,7 @@ const Pagination = ({
       <ul className="pagination">
         <li
           className={`page-item ${
-            currentPage === pageNumbers[0] ? "disabled" : ""
+            currentPage === pageNumbers[0] ? 'disabled' : ''
           }`}
         >
           <a
@@ -74,7 +74,7 @@ const Pagination = ({
               <li
                 key={number}
                 className={`page-item ${
-                  currentPage === number ? "active" : ""
+                  currentPage === number ? 'active' : ''
                 }`}
               >
                 <a
@@ -92,7 +92,9 @@ const Pagination = ({
         {pageIncrementBtn}
         <li
           className={`page-item ${
-            currentPage === pageNumbers[pageNumbers.length -1] ? "disabled" : ""
+            currentPage === pageNumbers[pageNumbers.length - 1]
+              ? 'disabled'
+              : ''
           }`}
         >
           <a
