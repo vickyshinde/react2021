@@ -1,4 +1,4 @@
-const RouteRenderMethod = ({name, surname, age}) => {
+const RouteRenderMethod = ({ name, surname, age }) => {
   return (
     <>
       <h3>Hi, name, surname, age is the props from Route</h3>
@@ -7,8 +7,6 @@ const RouteRenderMethod = ({name, surname, age}) => {
       <h2>age : {age}</h2>
     </>
   );
-}
+};
 
 export default RouteRenderMethod;
-
-

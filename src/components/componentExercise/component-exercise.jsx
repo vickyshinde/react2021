@@ -1,9 +1,5 @@
 function ComponentExercise() {
-  return (
-    <>
-      Component Exercise
-    </>
-  );
+  return <>Component Exercise</>;
 }
 
 export default ComponentExercise;

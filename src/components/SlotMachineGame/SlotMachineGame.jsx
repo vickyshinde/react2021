@@ -1,4 +1,4 @@
-import SlotM from "./SlotMComponent";
+import SlotM from './SlotMComponent';
 
 // const SlotM = (props) => {
 //   // let x = 'vicky';
@@ -32,7 +32,6 @@ import SlotM from "./SlotMComponent";
 //   }
 // }
 
-
 const SlotMachineGame = () => {
   return (
     <>
@@ -43,6 +42,6 @@ const SlotMachineGame = () => {
       <SlotM x="Piyush" y="vicky" z="vicky" />
     </>
   );
-}
+};
 
 export default SlotMachineGame;

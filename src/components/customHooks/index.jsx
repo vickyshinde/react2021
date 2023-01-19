@@ -1,6 +1,6 @@
-import { useRef, useState } from "react";
-import useWindowSize from "./useWindowSize";
-import useElementSize from "./useElementSize";
+import { useRef, useState } from 'react';
+import useWindowSize from './useWindowSize';
+import useElementSize from './useElementSize';
 
 const CustomHook = () => {
   const size = useWindowSize();
@@ -14,10 +14,10 @@ const CustomHook = () => {
         {hide && <h1>Header</h1>}
       </header>
       <button
+        type="button"
         onClick={() => {
           setHide((prevState) => !prevState);
-        }}
-      >
+        }}>
         Test
       </button>
       <section className="courseTakingContainer hasLeftRail hasRightRail">

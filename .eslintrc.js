@@ -1,15 +1,15 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
+    es2021: true
   },
   extends: ['plugin:react/recommended', 'airbnb', 'prettier'],
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
     ecmaVersion: 12,
-    sourceType: 'module',
+    sourceType: 'module'
   },
   plugins: ['react', 'prettier'],
   rules: {
@@ -25,17 +25,18 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'new-cap': 0,
     'arrow-body-style': 0,
+    'react/prop-types': 'off',
     'prettier/prettier': [
       'error',
       {
         singleQuote: true,
-        endOfLine: 'auto',
-      },
-    ],
+        endOfLine: 'auto'
+      }
+    ]
   },
   settings: {
     react: {
-      version: 'detect', // Detect react version
-    },
-  },
+      version: 'detect' // Detect react version
+    }
+  }
 };

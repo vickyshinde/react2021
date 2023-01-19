@@ -1,8 +1,7 @@
-import { useState } from "react";
-import FormLogin from "./formLogin";
+import { useState } from 'react';
+import FormLogin from './formLogin';
 
 const Form = () => {
-
   const [name, setName] = useState('');
   const [onSubmitName, setOnSubmitName] = useState();
 
@@ -11,7 +10,7 @@ const Form = () => {
     console.log(event);
     console.log('target :');
     console.log(event.target);
-    console.log('value : ' + event.target.value);
+    console.log(`value : ${event.target.value}`);
     setName(event.target.value);
   };
 
@@ -28,13 +27,7 @@ const Form = () => {
           <p>Hello {name} </p>
           <div className="form-group">
             <label>Name</label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Name"
-              onChange={inputEvent}
-              value={name}
-            />
+            <input type="text" className="form-control" placeholder="Name" onChange={inputEvent} value={name} />
           </div>
           {/* <button type="submit" onClick={showName} className="btn btn-primary">
             Submit
@@ -50,6 +43,6 @@ const Form = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Form;

@@ -1,4 +1,6 @@
-import CCom from "./CCom";
+// eslint-disable-next-line import/no-cycle
+import CCom from './CCom';
+
 const BCom = () => {
   return (
     <div>

@@ -1,4 +1,5 @@
-import { useParams, useLocation, useHistory } from "react-router-dom";
+import { useParams, useLocation, useHistory } from 'react-router-dom';
+
 const HooksuseHistory = () => {
   const { fname, lname } = useParams();
   const location = useLocation();
@@ -7,7 +8,7 @@ const HooksuseHistory = () => {
   // console.log("location ---");
   // console.log(location);
 
-  console.log("history ---");
+  console.log('history ---');
   console.log(history);
 
   return (
@@ -22,19 +23,19 @@ const HooksuseHistory = () => {
       {location.pathname === `/hooksuseHistory/vicky/shinde` ? (
         <div>
           <button
+            type="button"
             className="btn btn-primary"
             onClick={() => {
               history.goBack();
-            }}
-          >
+            }}>
             Go Back
           </button>
           <button
+            type="button"
             className="btn btn-primary"
             onClick={() => {
               history.push('/');
-            }}
-          >
+            }}>
             Push
           </button>
         </div>

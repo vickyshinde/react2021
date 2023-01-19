@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const Hooks = () => {
-
   const [count, setCount] = useState(1);
 
   // let count = 1;
@@ -9,8 +8,7 @@ const Hooks = () => {
     // count = count++;
     // console.log(count++);
     setCount(count + 1);
-  }
-
+  };
 
   let getTime = new Date().toLocaleTimeString();
 
@@ -19,7 +17,7 @@ const Hooks = () => {
   const updateTime = () => {
     getTime = new Date().toLocaleTimeString();
     setCurrTime(getTime);
-  }
+  };
 
   const [digiTime, setDigiTime] = useState(getTime);
 
@@ -34,13 +32,13 @@ const Hooks = () => {
     <div>
       <h3>Hooks</h3>
       <h1> {count} </h1>
-      <button className="btn btn-warning" onClick={incNum}>
+      <button type="button" className="btn btn-warning" onClick={incNum}>
         Click
       </button>
       <hr />
       <h3>Get Time on Refreshing and Clicking Button using useState Hook</h3>
       <h1> {currTime} </h1>
-      <button className="btn btn-warning" onClick={updateTime}>
+      <button type="button" className="btn btn-warning" onClick={updateTime}>
         Click
       </button>
       <hr />

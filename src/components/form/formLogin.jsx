@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const FormLogin = () => {
-  const [name, setName] = useState("");
-  const [pass, setPass] = useState("");
+  const [name, setName] = useState('');
+  const [pass, setPass] = useState('');
   const [onSubmitName, setOnSubmitName] = useState();
   const [onSubmitPass, setOnSubmitPass] = useState();
 
@@ -38,23 +38,11 @@ const FormLogin = () => {
         </p>
         <div className="form-group">
           <label>Name</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Name"
-            onChange={nameInputEvent}
-            value={name}
-          />
+          <input type="text" className="form-control" placeholder="Name" onChange={nameInputEvent} value={name} />
         </div>
         <div className="form-group">
           <label>Password</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Password"
-            onChange={passInputEvent}
-            value={pass}
-          />
+          <input type="text" className="form-control" placeholder="Password" onChange={passInputEvent} value={pass} />
         </div>
         <button type="submit" className="btn btn-primary">
           Submit

@@ -4,15 +4,16 @@ const Pagination = ({
   paginate,
   currentPage,
   paginatePrev,
-  isPrevDisabled,
-  isNextDisabled,
+  // isPrevDisabled,
+  // isNextDisabled,
   paginateNext,
-  pageNumberLimit,
+  // pageNumberLimit,
   maxPageNumberLimit,
   minPageNumberLimit
 }) => {
   const pageNumbers = [];
 
+  // eslint-disable-next-line no-plusplus
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     // console.log(i);
     // debugger;

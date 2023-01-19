@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { GoPlus } from "react-icons/go";
+import { useState } from 'react';
+import { GoPlus } from 'react-icons/go';
 
 const CreateNote = ({ passNote }) => {
   const [show, setShow] = useState(false);
   const [note, setNote] = useState({
-    title: "",
-    content: "",
+    title: '',
+    content: ''
   });
 
   const inputEvent = (event) => {
@@ -17,7 +17,7 @@ const CreateNote = ({ passNote }) => {
     setNote((prevData) => {
       return {
         ...prevData,
-        [name]: value,
+        [name]: value
       };
     });
   };
@@ -25,8 +25,8 @@ const CreateNote = ({ passNote }) => {
   const addEvent = () => {
     passNote(note);
     setNote({
-      title: "",
-      content: "",
+      title: '',
+      content: ''
     });
     setShow(false);
   };
@@ -63,13 +63,9 @@ const CreateNote = ({ passNote }) => {
                   name="content"
                   onChange={inputEvent}
                   value={note.content}
-                ></textarea>
+                />
               </div>
-              <button
-                onClick={addEvent}
-                type="submit"
-                className="btn btn-primary"
-              >
+              <button onClick={addEvent} type="submit" className="btn btn-primary">
                 <GoPlus />
               </button>
             </>

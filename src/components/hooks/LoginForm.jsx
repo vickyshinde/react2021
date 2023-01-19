@@ -1,19 +1,21 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+  const [email, setEmail] = useState('');
+  const [pass, setPass] = useState('');
 
   const [allEntry, setAllEntry] = useState([]);
 
   const formSubmit = (event) => {
     event.preventDefault();
 
-    if(email && pass) {
+    if (email && pass) {
       const newEntry = {
         id: new Date().getTime().toString(),
+        // eslint-disable-next-line object-shorthand
         email: email,
-        pass: pass,
+        // eslint-disable-next-line object-shorthand
+        pass: pass
       };
 
       setAllEntry([...allEntry, newEntry]);
@@ -22,7 +24,7 @@ const LoginForm = () => {
 
       console.log(allEntry);
     } else {
-      alert("Plz fill the data");
+      alert('Plz fill the data');
     }
   };
 
@@ -42,7 +44,7 @@ const LoginForm = () => {
             value={email}
           />
           <small id="emailHelp" className="form-text text-muted">
-            We'll never share your email with anyone else.
+            We will never share your email with anyone else.
           </small>
         </div>
         <div className="form-group">
@@ -57,7 +59,7 @@ const LoginForm = () => {
             value={pass}
           />
           <small id="emailHelp" className="form-text text-muted">
-            We'll never share your email with anyone else.
+            We will never share your email with anyone else.
           </small>
         </div>
         <button type="submit" className="btn btn-primary">
@@ -65,10 +67,17 @@ const LoginForm = () => {
         </button>
       </form>
 
-      <div>{allEntry.map((item) => {
-        const {id, email, pass} = item;
-        return <p key={id}>Email - {email}, Password - {pass}</p>
-      })}</div>
+      <div>
+        {allEntry.map((item) => {
+          // eslint-disable-next-line no-shadow
+          const { id, email, pass } = item;
+          return (
+            <p key={id}>
+              Email - {email}, Password - {pass}
+            </p>
+          );
+        })}
+      </div>
     </div>
   );
 };

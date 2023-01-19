@@ -17,6 +17,7 @@ const UserAdd = () => {
   const [userObj, setUserObj] = useState(initialValues);
 
   const { name, email, contact, password } = userObj;
+  // console.log(userObj);
 
   const [isInputValid, setIsInputValid] = useState({
     isNameValid: false,
@@ -29,6 +30,7 @@ const UserAdd = () => {
 
   const [isDisabled, setIsDisabled] = useState(false);
 
+  // eslint-disable-next-line no-shadow
   const onNameChange = (name) => {
     if (name.length < 4) {
       setIsInputValid({
@@ -49,6 +51,7 @@ const UserAdd = () => {
     });
   };
 
+  // eslint-disable-next-line no-shadow
   const onContactChange = (contact) => {
     if (contact.length < 10) {
       setIsInputValid({
@@ -69,9 +72,11 @@ const UserAdd = () => {
     });
   };
 
+  // eslint-disable-next-line no-shadow
   const onEmailChange = (email) => {
     // console.log(email);
-    let validEmail = new RegExp(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g).test(email);
+    // eslint-disable-next-line prefer-regex-literals
+    const validEmail = new RegExp(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g).test(email);
 
     // email is typing
     if (email) {
@@ -95,8 +100,9 @@ const UserAdd = () => {
       email
     });
   };
+  // eslint-disable-next-line no-shadow
   const onPasswordChange = (password) => {
-    var validPass = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/.test(password);
+    const validPass = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/.test(password);
     if (validPass) {
       setIsInputValid({
         ...isInputValid,

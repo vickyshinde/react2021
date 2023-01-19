@@ -1,16 +1,13 @@
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
 const useParamsHooks = () => {
-  const {fname, lname} = useParams();
+  const { fname, lname } = useParams();
   return (
-    <>
-      <h2>
-        useParams Hooks {fname} {lname}
-      </h2>
-    </>
+    <h2>
+      useParams Hooks {fname} {lname}
+    </h2>
   );
-}
-
+};
 
 // before hooks - old way
 /* const useParamsHooks = ({ match }) => {

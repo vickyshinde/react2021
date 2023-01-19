@@ -1,9 +1,11 @@
+/* eslint-disable no-return-await */
 import axios from 'axios';
 
 const userApi = 'http://localhost:5000/Users';
 const postApi = 'https://jsonplaceholder.typicode.com/posts';
 
 export const getUsers = async (id) => {
+  // eslint-disable-next-line no-param-reassign
   id = id || '';
   return await axios.get(`${userApi}/${id}`);
 };

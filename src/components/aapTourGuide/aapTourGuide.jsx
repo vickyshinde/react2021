@@ -30,11 +30,11 @@ const tourGuideSteps = [
 ];
 
 const AppTourGuide = () => {
-  const [step, setStep] = useState(tourGuideSteps);
+  const [step] = useState(tourGuideSteps);
   const [currentStep, setCurrentStep] = useState(0);
   const [position, setPosition] = useState(0);
 
-  const lengthOfStep = step.length;
+  // const lengthOfStep = step.length;
   const indexOfLastStep = step.length - 1;
   const activeStep = step[currentStep];
   /* console.log(`step`, step)
@@ -49,8 +49,8 @@ const AppTourGuide = () => {
   };
 
   const handlePosition = () => {
-    const position = currentStep + 1;
-    console.log(position);
+    const position1 = currentStep + 1;
+    console.log(position1);
     /* if (aaa === 0) {
       setPosition('left');
       console.log(`step 0`);
@@ -76,7 +76,7 @@ const AppTourGuide = () => {
     if (aaa === 6) {
       console.log(`step 6`);
     } */
-    switch (position) {
+    switch (position1) {
       case 0:
         setPosition('left');
         console.log(`step 0`);

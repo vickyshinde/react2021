@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import { getUsers } from "../../config/api-endpoints";
-import SubmitButtonWrapped from "../shared/SubmitButton";
+import { useState, useEffect } from 'react';
+import { getUsers } from '../../config/api-endpoints';
+import SubmitButtonWrapped from '../shared/SubmitButton';
 
-import styles from "./slider.module.scss";
+import styles from './slider.module.scss';
 
 const Slider = () => {
   const [sliderObj, setSliderObj] = useState([]);
@@ -29,7 +29,7 @@ const Slider = () => {
   }, [index, sliderObj]);
 
   useEffect(() => {
-    let sliderInt = setInterval(() => {
+    const sliderInt = setInterval(() => {
       setIndex(index + 1);
     }, 3000);
     return () => clearInterval(sliderInt);
@@ -39,16 +39,8 @@ const Slider = () => {
     <>
       <h1>Slider</h1>
       <div className="d-flex">
-        <SubmitButtonWrapped
-          title="Prev"
-          clsName="btn btn-danger btn-sm ml-1"
-          onClick={() => setIndex(index - 1)}
-        />
-        <SubmitButtonWrapped
-          title="Next"
-          clsName="btn btn-danger btn-sm ml-1"
-          onClick={() => setIndex(index + 1)}
-        />
+        <SubmitButtonWrapped title="Prev" clsName="btn btn-danger btn-sm ml-1" onClick={() => setIndex(index - 1)} />
+        <SubmitButtonWrapped title="Next" clsName="btn btn-danger btn-sm ml-1" onClick={() => setIndex(index + 1)} />
       </div>
       <div className={styles.slider}>
         {sliderObj.map((slide, slideIndex) => {
@@ -57,10 +49,7 @@ const Slider = () => {
           if (slideIndex === index) {
             position = styles.activeSlide;
           }
-          if (
-            slideIndex === index - 1 ||
-            (index === 0 && slideIndex === sliderObj.length - 1)
-          ) {
+          if (slideIndex === index - 1 || (index === 0 && slideIndex === sliderObj.length - 1)) {
             position = styles.lastSlide;
           }
           return (

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
 class SubmitButtonErrorBoundary extends React.Component {
@@ -8,15 +9,18 @@ class SubmitButtonErrorBoundary extends React.Component {
 
   static getDerivedStateFromError(error) {
     // Update state so the next render will show the fallback UI.
+    console.log(error);
     return { hasError: true };
   }
 
   componentDidCatch(error, info) {
     // You can also log the error to an error reporting service
     // logErrorToMyService(error, info);
+    console.log(error, info);
   }
 
   render() {
+    // eslint-disable-next-line react/destructuring-assignment
     if (this.state.hasError) {
       // You can render any custom fallback UI
       return (
@@ -25,6 +29,7 @@ class SubmitButtonErrorBoundary extends React.Component {
         </div>
       );
     }
+    // eslint-disable-next-line react/destructuring-assignment
     return this.props.children;
   }
 }

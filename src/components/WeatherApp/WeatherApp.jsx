@@ -1,10 +1,9 @@
-
 import { useEffect, useState } from 'react';
 import './weatherApp.scss';
 
 const WeatherApp = () => {
   const [city, setCity] = useState(null);
-  const [search, setSearch] = useState("Mumbai");
+  const [search, setSearch] = useState('Mumbai');
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -14,10 +13,9 @@ const WeatherApp = () => {
       const resJson = await response.json();
       console.log(resJson);
       setCity(resJson.main);
-    }
+    };
     fetchApi();
   }, [search]);
-
 
   const inputEvent = (eve) => {
     const cityName = eve.target.value;
@@ -30,13 +28,7 @@ const WeatherApp = () => {
       <h1>Weather App</h1>
       <div className="form-group">
         <label>Search City</label>
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Name"
-          onChange={inputEvent}
-          value={search}
-        />
+        <input type="text" className="form-control" placeholder="Name" onChange={inputEvent} value={search} />
       </div>
       <hr />
       {!city ? (
@@ -53,6 +45,6 @@ const WeatherApp = () => {
       )}
     </div>
   );
-}
+};
 
 export default WeatherApp;

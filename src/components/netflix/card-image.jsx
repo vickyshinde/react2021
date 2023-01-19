@@ -1,11 +1,11 @@
-const CardImage = function (props) {
+const CardImage = function ({ imgsrc }) {
   // console.log(props);
   return (
     <div>
-      <img src={props.imgsrc} alt="Alt Tag" class="card-img-top" />
+      <img src={imgsrc} alt="Alt Tag" className="card-img-top" />
       Card Image child component
     </div>
   );
-}
+};
 
 export default CardImage;

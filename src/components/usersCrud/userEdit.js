@@ -39,6 +39,7 @@ const UserEdit = () => {
     loadUserData();
   }, [id]);
 
+  // eslint-disable-next-line no-shadow
   const onNameChange = (name) => {
     if (name.length < 4) {
       setIsInputValid({
@@ -59,6 +60,7 @@ const UserEdit = () => {
     });
   };
 
+  // eslint-disable-next-line no-shadow
   const onContactChange = (contact) => {
     if (contact.length < 10) {
       setIsInputValid({
@@ -79,9 +81,11 @@ const UserEdit = () => {
     });
   };
 
+  // eslint-disable-next-line no-shadow
   const onEmailChange = (email) => {
     // console.log(email);
-    let validEmail = new RegExp(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g).test(email);
+    // eslint-disable-next-line prefer-regex-literals
+    const validEmail = new RegExp(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g).test(email);
 
     // email is typing
     if (email) {
@@ -105,8 +109,9 @@ const UserEdit = () => {
       email
     });
   };
+  // eslint-disable-next-line no-shadow
   const onPasswordChange = (password) => {
-    var validPass = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/.test(password);
+    const validPass = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/.test(password);
     if (validPass) {
       setIsInputValid({
         ...isInputValid,

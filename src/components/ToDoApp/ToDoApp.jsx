@@ -1,22 +1,21 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 // to get the data from localstorage
 
 const getLocalItems = () => {
-  let list = localStorage.getItem("todoList");
+  const list = localStorage.getItem('todoList');
   console.log(list);
 
   if (list) {
     return JSON.parse(list);
-  } else {
-    return [];
   }
+  return [];
 };
 
 const ToDoApp = () => {
-  const [inputData, setInputData] = useState("");
+  const [inputData, setInputData] = useState('');
 
   const [items, setItems] = useState(getLocalItems());
 
@@ -27,10 +26,10 @@ const ToDoApp = () => {
 
   const addItem = () => {
     if (!inputData) {
-      alert("please add item");
+      alert('please add item');
     } else {
       setItems([...items, inputData]);
-      setInputData("");
+      setInputData('');
     }
   };
 
@@ -49,7 +48,7 @@ const ToDoApp = () => {
 
   //  add data to localStorage
   useEffect(() => {
-    localStorage.setItem("todoList", JSON.stringify(items));
+    localStorage.setItem('todoList', JSON.stringify(items));
   }, [items]);
 
   return (
@@ -68,22 +67,17 @@ const ToDoApp = () => {
             value={inputData}
           />
         </div>
-        <button className="btn btn-primary mb-2" onClick={addItem}>
+        <button type="button" className="btn btn-primary mb-2" onClick={addItem}>
           Add
         </button>
       </div>
       <ul className="list-group mb-4">
         {items.map((item, index) => {
           return (
-            <li
-              key={index}
-              className="d-flex justify-content-between list-group-item text-success"
-            >
+            // eslint-disable-next-line react/no-array-index-key
+            <li key={index} className="d-flex justify-content-between list-group-item text-success">
               {item}
-              <span
-                onClick={() => deleteItem(index)}
-                className="btn btn-warning btn-sm"
-              >
+              <span onClick={() => deleteItem(index)} className="btn btn-warning btn-sm">
                 Deleted
               </span>
             </li>
@@ -93,19 +87,14 @@ const ToDoApp = () => {
         }} */}
       </ul>
       {items.length ? (
-        <button className="btn btn-primary mb-2" onClick={removeAll}>
+        <button type="button" className="btn btn-primary mb-2" onClick={removeAll}>
           Delete All
         </button>
       ) : (
-        ""
+        ''
       )}
       <hr />
-      <NavLink
-        exact
-        className="nav-link"
-        activeClassName="active"
-        to="/todoAppAdvance"
-      >
+      <NavLink exact className="nav-link" activeClassName="active" to="/todoAppAdvance">
         To Do App Advance - Edit, Update
       </NavLink>
     </div>

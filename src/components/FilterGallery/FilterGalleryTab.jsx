@@ -3,15 +3,13 @@ const FilterGalleryTab = ({ activeTab, cateHead = [], sortList = () => {} }) => 
   return (
     <div>
       <div className="btn-group mb-4" role="group" aria-label="Basic example">
-        {cateHead.map((item, index) => {
+        {cateHead.map((item) => {
           return (
             <button
-              key={index}
+              type="button"
+              key={item}
               onClick={() => sortList(item)}
-              className={`btn btn-primary ${
-                item === activeTab ? "btn-success" : "false"
-              }`}
-            >
+              className={`btn btn-primary ${item === activeTab ? 'btn-success' : 'false'}`}>
               {item}
             </button>
           );
@@ -57,7 +55,7 @@ const FilterGalleryTab = ({ activeTab, cateHead = [], sortList = () => {} }) => 
           className="btn btn-warning"
         >
           building
-        </button>*/}
+        </button> */}
       </div>
     </div>
   );

@@ -1,9 +1,8 @@
-import {useState } from 'react';
+import { useState } from 'react';
 import CreateNote from './CreateNote';
 import ListNote from './ListNote';
 
 const GoogleKeepApp = () => {
-
   const [addItem, setAddItem] = useState([]);
 
   const addNote = (note) => {
@@ -11,13 +10,13 @@ const GoogleKeepApp = () => {
       return [...prevData, note];
     });
     console.log(note);
-  }
+  };
 
   const onDelete = (id) => {
-    setAddItem((oldDataNwe) => oldDataNwe.filter ((curItem, index) => {
-      return index !== id;
-    })
-
+    setAddItem((oldDataNwe) =>
+      oldDataNwe.filter((curItem, index) => {
+        return index !== id;
+      })
     );
   };
 
@@ -29,18 +28,12 @@ const GoogleKeepApp = () => {
       <div className="row">
         {addItem.map((item, index) => {
           return (
-            <ListNote
-              id={index}
-              key={index}
-              title={item.title}
-              content={item.content}
-              deleteItem={onDelete}
-            />
+            <ListNote id={index} key={item.title} title={item.title} content={item.content} deleteItem={onDelete} />
           );
         })}
       </div>
     </>
   );
-}
+};
 
 export default GoogleKeepApp;

@@ -26,8 +26,7 @@ const HooksuseLocation = () => {
           className="btn btn-warning"
           onClick={() => {
             alert('Hi');
-          }}
-        >
+          }}>
           Got It
         </button>
       ) : (

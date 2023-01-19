@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 const useDocTitle = (count) => {
   useEffect(() => {
@@ -7,9 +7,9 @@ const useDocTitle = (count) => {
     } else {
       document.title = `Count`;
     }
-    console.log("hi useEffect a");
+    console.log('hi useEffect a');
   }, [count]);
-}
+};
 
 // const useWindowWidth = (value) => {
 //   // cleanup function
@@ -28,4 +28,3 @@ const useDocTitle = (count) => {
 // };
 
 export { useDocTitle };
-

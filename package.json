@@ -12,6 +12,7 @@
     "axios": "0.24.0",
     "bootstrap": "4.6.0",
     "concurrently": "6.3.0",
+    "prop-types": "^15.8.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "4.3.1",
@@ -56,17 +57,17 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-react-app": "7.0.1",
+    "@react-bratus/cli": "3.6.0",
     "eslint": "8.31.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "8.3.0",
+    "eslint-config-react-app": "7.0.1",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.28.0",
     "eslint-plugin-react-hooks": "4.3.0",
-    "prettier": "2.8.1",
     "json-server": "0.17.0",
-    "@react-bratus/cli": "3.6.0"
+    "prettier": "2.8.1"
   }
 }

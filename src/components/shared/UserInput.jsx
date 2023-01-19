@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -9,15 +10,18 @@ class UserInputErrorBoundary extends React.Component {
 
   static getDerivedStateFromError(error) {
     // Update state so the next render will show the fallback UI.
+    console.log(error);
     return { hasError: true };
   }
 
   componentDidCatch(error, info) {
     // You can also log the error to an error reporting service
     // logErrorToMyService(error, info);
+    console.log(error, info);
   }
 
   render() {
+    // eslint-disable-next-line react/destructuring-assignment
     if (this.state.hasError) {
       // You can render any custom fallback UI
       return (
@@ -26,6 +30,7 @@ class UserInputErrorBoundary extends React.Component {
         </div>
       );
     }
+    // eslint-disable-next-line react/destructuring-assignment
     return this.props.children;
   }
 }
@@ -70,7 +75,7 @@ UserInput.defaultProps = {
   type: 'text',
   clsName: 'inputClass',
   placeholder: 'placeholder',
-  value: '',
+  // value: '',
   onChange: () => {}
 };
 
@@ -81,9 +86,9 @@ UserInput.propTypes = {
   type: PropTypes.string,
   clsName: PropTypes.string,
   placeholder: PropTypes.string,
-  errorMsg: PropTypes.string,
-  isValid: PropTypes.bool,
-  value: PropTypes.string,
+  // errorMsg: PropTypes.string,
+  // isValid: PropTypes.bool,
+  // value: PropTypes.string,
   onChange: PropTypes.func
 };
 

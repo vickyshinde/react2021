@@ -1,4 +1,4 @@
-import { add, sub, mult, div } from "./calc";
+import { add, sub, mult, div } from './calc';
 
 const SimpleCalc = () => {
   return (

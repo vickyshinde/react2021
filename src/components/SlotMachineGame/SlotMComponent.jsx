@@ -3,28 +3,28 @@ const SlotM = (props) => {
   // let y = 'vicky';
   // let z = 'vicky';
 
-  let x = props.x;
-  let y = props.y;
-  let z = props.z;
+  const { x, y, z } = props;
+  // const y = props.y;
+  // const z = props.z;
 
-//   {x === y && y === z ? (
-//     <>
-//       <h4>
-//         {x} {y} {z}
-//       </h4>
-//       <h3>Matching</h3>
-//       <hr />
-//     </>
-//   ) : (
-//     <>
-//       <h4>
-//         {x} {y} {z}
-//       </h4>
-//       <h3>Not Matching</h3>
-//       <hr />
-//     </>
-//   );
-// }
+  //   {x === y && y === z ? (
+  //     <>
+  //       <h4>
+  //         {x} {y} {z}
+  //       </h4>
+  //       <h3>Matching</h3>
+  //       <hr />
+  //     </>
+  //   ) : (
+  //     <>
+  //       <h4>
+  //         {x} {y} {z}
+  //       </h4>
+  //       <h3>Not Matching</h3>
+  //       <hr />
+  //     </>
+  //   );
+  // }
 
   if (x === y && y === z) {
     return (
@@ -36,17 +36,16 @@ const SlotM = (props) => {
         <hr />
       </>
     );
-  } else {
-    return (
-      <>
-        <h4>
-          {x} {y} {z}
-        </h4>
-        <h3>Not Matching</h3>
-        <hr />
-      </>
-    );
   }
+  return (
+    <>
+      <h4>
+        {x} {y} {z}
+      </h4>
+      <h3>Not Matching</h3>
+      <hr />
+    </>
+  );
 };
 
 export default SlotM;

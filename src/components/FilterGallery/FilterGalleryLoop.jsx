@@ -1,13 +1,13 @@
-
-const FilterGalleryLoop = ({filterGalleryData}) => {
+const FilterGalleryLoop = ({ filterGalleryData }) => {
+  console.log(filterGalleryData);
   return (
     <>
-      {!filterGalleryData.length && "no data found"}
+      {!filterGalleryData.length && 'no data found'}
       <div className="row">
-        {filterGalleryData.map((item, index) => {
+        {filterGalleryData.map((item) => {
           const { imgsrc, title, disc, link, category } = item;
           return (
-            <div key={index} className="col-3 mb-4">
+            <div key={title} className="col-3 mb-4">
               <h5>
                 <a href={link}>{title}</a>
               </h5>

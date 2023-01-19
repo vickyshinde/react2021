@@ -1,28 +1,26 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const CovidUpdate = () => {
+  const numFormat = Intl.NumberFormat('en-IN');
 
-  let numFormat = Intl.NumberFormat("en-IN");
-
-  console.log("Rupees: " + numFormat.format(45435435435334));
-
+  console.log(`Rupees: ${numFormat.format(45435435435334)}`);
 
   const [covidDate, setCovidData] = useState(['']);
 
   const getCovidDate = async () => {
     try {
-      const res = await fetch("https://data.covid19india.org/data.json");
+      const res = await fetch('https://data.covid19india.org/data.json');
       const resFormat = await res.json();
       console.log(resFormat.statewise[0]);
       setCovidData(resFormat.statewise[0]);
     } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   useEffect(() => {
     getCovidDate();
-  },[]);
+  }, []);
 
   return (
     <div>
@@ -81,13 +79,12 @@ const CovidUpdate = () => {
           </tr>
           <tr>
             <th scope="row">statenotes</th>
-            <td>{covidDate.statenotes ? covidDate.statenotes : "NA"}</td>
+            <td>{covidDate.statenotes ? covidDate.statenotes : 'NA'}</td>
           </tr>
         </tbody>
       </table>
     </div>
   );
-
-}
+};
 
 export default CovidUpdate;

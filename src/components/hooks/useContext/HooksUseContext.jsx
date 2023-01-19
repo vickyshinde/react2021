@@ -1,4 +1,6 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
 import { createContext } from 'react';
+// eslint-disable-next-line import/no-cycle
 import ACom from './ACom';
 
 // context
