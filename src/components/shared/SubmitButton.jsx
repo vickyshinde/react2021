@@ -44,7 +44,7 @@ const SubmitButtonWrapped = (props) => {
 
 const SubmitButton = ({ clsName, onClick, title, disabled }) => {
   return (
-    <button type="button" disabled={disabled} onClick={onClick} className={clsName}>
+    <button type="submit" disabled={disabled} onClick={onClick} className={clsName}>
       {title}
     </button>
   );
