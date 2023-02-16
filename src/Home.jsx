@@ -1,8 +1,8 @@
 import Greeting from './components/Greeting/Greeting';
 
 const Home = () => {
-  const fName = 'Jon';
-  const lName = 'Deo';
+  const fName = 'Sharvari';
+  const lName = 'Shinde';
 
   return <Greeting fName={fName} lName={lName} />;
 };

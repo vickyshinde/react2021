@@ -138,7 +138,7 @@ const UserEdit = () => {
   const onSubmitClick = (e) => {
     e.preventDefault();
     editUserDetails(userObj);
-    console.log(userObj);
+    // console.log(userObj);
     history.push('/user-listing');
   };
   return (

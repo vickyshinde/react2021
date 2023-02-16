@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 const useElementSize = (myRef, ...changeTrigger) => {
-  console.log(...changeTrigger);
-  console.log(myRef);
+  // console.log(...changeTrigger);
+  // console.log(myRef);
   const [elementSize, setElementSize] = useState({
     width: undefined,
     height: undefined

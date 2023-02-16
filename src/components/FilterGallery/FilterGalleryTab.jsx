@@ -1,5 +1,5 @@
 const FilterGalleryTab = ({ activeTab, cateHead = [], sortList = () => {} }) => {
-  console.log(activeTab);
+  // console.log(activeTab);
   return (
     <div>
       <div className="btn-group mb-4" role="group" aria-label="Basic example">

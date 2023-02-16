@@ -50,7 +50,7 @@ const AppTourGuide = () => {
 
   const handlePosition = () => {
     const position1 = currentStep + 1;
-    console.log(position1);
+    // console.log(position1);
     /* if (aaa === 0) {
       setPosition('left');
       console.log(`step 0`);

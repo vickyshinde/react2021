@@ -1,5 +1,5 @@
 const FilterGalleryLoop = ({ filterGalleryData }) => {
-  console.log(filterGalleryData);
+  // console.log(filterGalleryData);
   return (
     <>
       {!filterGalleryData.length && 'no data found'}

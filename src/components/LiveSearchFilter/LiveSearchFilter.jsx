@@ -7,7 +7,7 @@ const LiveSearchFilter = () => {
   const inputEvent = (event) => {
     const inputText = event.target.value;
 
-    console.log(inputText);
+    // console.log(inputText);
 
     setImg(inputText);
   };

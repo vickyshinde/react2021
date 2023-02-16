@@ -6,11 +6,11 @@ const Form = () => {
   const [onSubmitName, setOnSubmitName] = useState();
 
   const inputEvent = (event) => {
-    console.log('Event :');
-    console.log(event);
-    console.log('target :');
-    console.log(event.target);
-    console.log(`value : ${event.target.value}`);
+    // console.log('Event :');
+    // console.log(event);
+    // console.log('target :');
+    // console.log(event.target);
+    // console.log(`value : ${event.target.value}`);
     setName(event.target.value);
   };
 

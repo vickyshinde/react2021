@@ -7,7 +7,7 @@ const Posts = () => {
   const [posts, setPosts] = useState([]);
   const [loader, setLoader] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(30);
+  const [postsPerPage, setPostsPerPage] = useState(10);
 
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
@@ -22,7 +22,7 @@ const Posts = () => {
   const getAllPost = async () => {
     setLoader(true);
     const response = await getPost();
-    console.log(response.data);
+    // console.log(response.data);
     setPosts(response.data);
     setLoader(false);
   };

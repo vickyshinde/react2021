@@ -23,6 +23,7 @@ const UserListing = () => {
   }, []);
 
   const handleDelete = async (id) => {
+    // eslint-disable-next-line no-alert
     if (window.confirm('Are you wanted to delete the User')) {
       await deleteUser(id);
       getAllUsers();

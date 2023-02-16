@@ -9,7 +9,7 @@ const GoogleKeepApp = () => {
     setAddItem((prevData) => {
       return [...prevData, note];
     });
-    console.log(note);
+    // console.log(note);
   };
 
   const onDelete = (id) => {

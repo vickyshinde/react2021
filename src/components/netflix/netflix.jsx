@@ -2,7 +2,7 @@ import Card from './card';
 import MockData from '../../mockData/netflixData';
 
 const Netflix = function () {
-  console.log(`---${MockData[0].imgsrc}`);
+  // console.log(`---${MockData[0].imgsrc}`);
 
   /* function nCard(val, index) {
     console.log("val" + val)
@@ -20,7 +20,7 @@ const Netflix = function () {
 
   // FAT ARROW Function
   const nCard = (val, index) => {
-    console.log(`val${val}`);
+    // console.log(`val${val}`);
     return (
       <div className="col-3">
         <Card key={index} imgsrc={val.imgsrc} title={val.title} sname={val.sname} link={val.link} cName={val.cName} />

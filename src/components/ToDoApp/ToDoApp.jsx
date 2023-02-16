@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 const getLocalItems = () => {
   const list = localStorage.getItem('todoList');
-  console.log(list);
+  // console.log(list);
 
   if (list) {
     return JSON.parse(list);
@@ -20,7 +20,7 @@ const ToDoApp = () => {
   const [items, setItems] = useState(getLocalItems());
 
   const inputEvent = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setInputData(event.target.value);
   };
 
