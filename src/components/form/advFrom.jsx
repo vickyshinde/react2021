@@ -8,12 +8,22 @@ const AdvFrom = () => {
     confirmPassword: '',
     occupation: 'Select',
     gender: '',
-    languages: []
+    languages: [],
+    additional: ''
   });
 
   const [fromError, setFromError] = useState({});
+  const [additionalFields, setAdditionalFields] = useState(false);
 
   const onChangeHandler = (event) => {
+    if (event.target.id === 'javascript') {
+      // alert('hi');
+      if (event.target.checked) {
+        setAdditionalFields(true);
+      } else {
+        setAdditionalFields(false);
+      }
+    }
     if (event.target.name === 'languages') {
       console.log('checkbox');
 
@@ -36,6 +46,7 @@ const AdvFrom = () => {
 
   const validateFrom = () => {
     const err = {};
+
     if (formData.userName === '') {
       err.userName = 'username required!';
     }
@@ -75,6 +86,12 @@ const AdvFrom = () => {
       err.languages = 'Any one Languages required!';
     }
 
+    if (additionalFields) {
+      if (formData.additional === '') {
+        err.additional = 'Additional required!';
+      }
+    }
+
     setFromError({ ...err });
 
     console.log(Object.keys(err));
@@ -91,11 +108,11 @@ const AdvFrom = () => {
     } else {
       alert('in valid form');
     }
-    console.log(isValid);
+    console.log('isValid', isValid);
   };
 
   return (
-    <div className="col-3">
+    <div className="col-6">
       <h3>Adv Form</h3>
       <form onSubmit={onSubmitHandler}>
         <div className="form-group">
@@ -242,11 +259,29 @@ const AdvFrom = () => {
               value="javascript"
               id="javascript"
               onChange={onChangeHandler}
-              checked={formData.languages.indexOf('javascript') !== -1}
+              // checked={formData.languages.indexOf('javascript') !== -1}
             />
             <label className="form-check-label" htmlFor="javascript">
               Javascript
             </label>
+          </div>
+          <div className="additional">
+            {additionalFields && (
+              <div className="test">
+                <div className="form-group">
+                  <label>additional</label>
+                  <input
+                    type="text"
+                    name="additional"
+                    className="form-control"
+                    placeholder="additional"
+                    onChange={onChangeHandler}
+                    value={formData.additional}
+                  />
+                  <div className="invalid-feedback d-block">{fromError.additional}</div>
+                </div>
+              </div>
+            )}
           </div>
           <div className="invalid-feedback d-block">{fromError.languages}</div>
         </div>
