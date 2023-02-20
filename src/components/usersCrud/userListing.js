@@ -30,9 +30,69 @@ const UserListing = () => {
     }
   };
 
+  // sort
+  const [order, setOrder] = useState('ASC');
+  const [orderActiveCol, setOrderActiveCol] = useState('');
+  const [orderActive, setOrderActive] = useState('');
+
+  const sorting = (col) => {
+    if (order === 'ASC') {
+      const sorted = [...users].sort((a, b) =>
+        a[col].toString().toLowerCase() > b[col].toString().toLowerCase() ? 1 : -1
+      );
+      setOrderActiveCol(col);
+      setUsers(sorted);
+      setOrder('DSC');
+      setOrderActive('ASC');
+    }
+    if (order === 'DSC') {
+      const sorted = [...users].sort((a, b) =>
+        a[col].toString().toLowerCase() < b[col].toString().toLowerCase() ? 1 : -1
+      );
+      setUsers(sorted);
+      setOrderActiveCol(col);
+      setOrder('ASC');
+      setOrderActive('DSC');
+    }
+  };
+
+  // search
+  const [searchInput, setSearchInput] = useState('');
+  const [filteredResults, setFilteredResults] = useState([]);
+
+  const searchItems = (searchValue) => {
+    // console.log(searchValue);
+    setSearchInput(searchValue);
+    if (searchInput !== '') {
+      const filteredData = users.filter((item) => {
+        return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase());
+      });
+      // console.log(filteredData);
+      setFilteredResults(filteredData);
+    } else {
+      setFilteredResults(users);
+    }
+  };
+
+  console.log('filteredResults', filteredResults);
+
+  const aaa = searchInput.length < 1 ? users : filteredResults;
+
+  console.log(aaa);
+
   return (
     <>
       <h2>User Listing</h2>
+      <input
+        label="Search"
+        name="search"
+        type="text"
+        clsName="form-control"
+        placeholder="Search..."
+        // onChange={searchItems}
+        onChange={(e) => searchItems(e.target.value)}
+        val={searchInput}
+      />
       <div>
         <NavLink exact className="btn btn-primary mb-4" to="/user-add">
           User Add
@@ -44,16 +104,41 @@ const UserListing = () => {
         <table className="table table-bordered">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Contact</th>
-              <th scope="col">Password</th>
+              <th
+                scope="col"
+                className={`sort ${orderActiveCol === 'id' ? `active${orderActive}` : ''}`}
+                onClick={() => sorting('id')}>
+                #
+              </th>
+              <th
+                scope="col"
+                className={`sort ${orderActiveCol === 'name' ? `active${orderActive}` : ''}`}
+                onClick={() => sorting('name')}>
+                Name
+              </th>
+              <th
+                scope="col"
+                className={`sort ${orderActiveCol === 'email' ? `active${orderActive}` : ''}`}
+                onClick={() => sorting('email')}>
+                Email
+              </th>
+              <th
+                scope="col"
+                className={`sort ${orderActiveCol === 'contact' ? `active${orderActive}` : ''}`}
+                onClick={() => sorting('contact')}>
+                Contact
+              </th>
+              <th
+                scope="col"
+                className={`sort ${orderActiveCol === 'password' ? `active${orderActive}` : ''}`}
+                onClick={() => sorting('password')}>
+                Password
+              </th>
               <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
-            {users.map((item) => {
+            {aaa.map((item) => {
               return (
                 <tr key={item.id}>
                   <th scope="row">{item.id}</th>
@@ -80,6 +165,7 @@ const UserListing = () => {
                 </tr>
               );
             })}
+            {!aaa.length && 'no results'}
           </tbody>
         </table>
       )}
